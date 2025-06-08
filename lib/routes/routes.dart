@@ -9,9 +9,9 @@ Route<dynamic>? onGenerateRoute(RouteSettings settings) {
     final type = uri.pathSegments[0];
     final id = uri.pathSegments[1];
     if (type == 'movie') {
-      return MaterialPageRoute(builder: (context) => MovieHomePage(id: id));
+      return MaterialPageRoute(builder: (context) => SafeArea(child: MovieHomePage(id: id)));
     } else if (type == 'tv') {
-      return MaterialPageRoute(builder: (context) => TvHomePage(id: id));
+      return MaterialPageRoute(builder: (context) => SafeArea(child: TvHomePage(id: id)));
     }
   }
   // Fallback: home page

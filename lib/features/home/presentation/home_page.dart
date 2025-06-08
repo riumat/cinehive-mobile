@@ -27,7 +27,6 @@ class HomePage extends ConsumerWidget {
                 loading: () => const CircularProgressIndicator(),
                 error: (err, _) => Text('Errore nel caricamento dei dati $err'),
                 data: (data) {
-                  debugPrint('Data received: $data');
                   return Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 16.0),
                     child: Column(
