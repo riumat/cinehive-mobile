@@ -15,14 +15,14 @@ class HomePage extends ConsumerWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              const SizedBox(height: 18),
+              const SizedBox(height: 10),
               Image.asset(
                 'assets/images/logo-no-bg.png',
-                width: 200,
-                height: 200,
+                width: 250,
+                height: 250,
                 fit: BoxFit.contain,
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 10),
               asyncHomeContent.when(
                 loading: () => const CircularProgressIndicator(),
                 error: (err, _) => Text('Errore nel caricamento dei dati $err'),
