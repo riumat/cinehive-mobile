@@ -1,4 +1,7 @@
 import 'package:cinehive_mobile/features/home/models/content.dart';
+import 'package:cinehive_mobile/features/movie/presentation/movie_home_page.dart';
+import 'package:cinehive_mobile/features/shared/main_layout.dart';
+import 'package:cinehive_mobile/features/tv/presentation/tv_home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 
@@ -22,7 +25,27 @@ class HomeCarousel extends StatelessWidget {
 
           return GestureDetector(
             onTap: () {
-              Navigator.pushNamed(context, '/${item.mediaType}/${item.id}');
+              if (item.mediaType == "movie") {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder:
+                        (c) => MainLayout(
+                          body: MovieHomePage(id: item.id.toString()),
+                        ),
+                  ),
+                );
+              } else {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder:
+                        (c) => MainLayout(
+                          body: TvHomePage(id: item.id.toString()),
+                        ),
+                  ),
+                );
+              }
             },
             child: Container(
               width: 130,

@@ -15,7 +15,6 @@ class HomePage extends ConsumerWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              const SizedBox(height: 10),
               Image.asset(
                 'assets/images/logo-no-bg.png',
                 width: 250,
@@ -28,7 +27,7 @@ class HomePage extends ConsumerWidget {
                 error: (err, _) => Text('Errore nel caricamento dei dati $err'),
                 data: (data) {
                   return Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                    padding: const EdgeInsets.only(left: 16.0),
                     child: Column(
                       children: [
                         CarouselSection(
