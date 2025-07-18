@@ -10,7 +10,13 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       title: "CineHive",
       theme: ThemeData.dark(useMaterial3: true).copyWith(
-       scaffoldBackgroundColor: Colors.black
+       scaffoldBackgroundColor: Colors.black,
+       pageTransitionsTheme: const PageTransitionsTheme(
+        builders: {
+          TargetPlatform.android:CupertinoPageTransitionsBuilder(),
+          TargetPlatform.iOS:CupertinoPageTransitionsBuilder(),
+        }
+       )
       ),
       debugShowCheckedModeBanner: false,
       home: MainLayout(body: HomePage()),

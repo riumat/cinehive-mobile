@@ -31,7 +31,7 @@ class CarouselSection extends StatelessWidget {
                 Colors.white,
                 Colors.transparent,
               ],
-              stops: const [0.0, 0.80, 1.0], // regola 0.85 per la larghezza della dissolvenza
+              stops: const [0.0, 0.80, 1.0], 
             ).createShader(bounds);
           },
           blendMode: BlendMode.dstIn,

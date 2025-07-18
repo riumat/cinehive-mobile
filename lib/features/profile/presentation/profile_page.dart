@@ -6,12 +6,8 @@ class ProfilePage extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // Placeholder for profile functionality
     return Scaffold(
-      appBar: AppBar(title: const Text('Profile')),
-      body: Center(
-        child: Text('Profile functionality will be implemented here.'),
-      ),
+      body: Text('Profile functionality will be implemented here.'),
     );
   }
 }

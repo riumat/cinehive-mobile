@@ -1,6 +1,9 @@
 import 'package:cinehive_mobile/features/home/data/home_content_provider.dart';
 import 'package:cinehive_mobile/features/home/widgets/carousel.dart';
 import 'package:cinehive_mobile/features/home/widgets/carousel_section.dart';
+import 'package:cinehive_mobile/features/search/presentation/search_page.dart';
+import 'package:cinehive_mobile/features/shared/detail_layout.dart';
+import 'package:cinehive_mobile/shared/widgets/searchbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -21,7 +24,6 @@ class HomePage extends ConsumerWidget {
                 height: 250,
                 fit: BoxFit.contain,
               ),
-              const SizedBox(height: 10),
               asyncHomeContent.when(
                 loading: () => const CircularProgressIndicator(),
                 error: (err, _) => Text('Errore nel caricamento dei dati $err'),
@@ -30,6 +32,26 @@ class HomePage extends ConsumerWidget {
                     padding: const EdgeInsets.only(left: 16.0),
                     child: Column(
                       children: [
+                        Padding(
+                          padding: const EdgeInsets.only(right: 16),
+                          child: CustomSearchbar(
+                            defaultQuery: '',
+                            onSearch: (query) {
+                              if (query.isNotEmpty) {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder:
+                                        (c) => DetailLayout(
+                                          body: SearchPage(query: query),
+                                        ),
+                                  ),
+                                );
+                              }
+                            },
+                          ),
+                        ),
+                        const SizedBox(height: 16),
                         CarouselSection(
                           key: const Key('trending_movies_section'),
                           title: 'Trending movies',
@@ -40,9 +62,7 @@ class HomePage extends ConsumerWidget {
                         CarouselSection(
                           key: const Key('trending_tv_section'),
                           title: 'Trending tv shows',
-                          child: HomeCarousel(
-                            items: data['trending_tv'] ?? [],
-                          ),
+                          child: HomeCarousel(items: data['trending_tv'] ?? []),
                         ),
                         CarouselSection(
                           key: const Key('top_rated_movies_section'),
@@ -70,4 +90,3 @@ class HomePage extends ConsumerWidget {
     );
   }
 }
-

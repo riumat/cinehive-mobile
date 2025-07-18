@@ -1,6 +1,6 @@
 import 'package:cinehive_mobile/features/home/models/content.dart';
 import 'package:cinehive_mobile/features/movie/presentation/movie_home_page.dart';
-import 'package:cinehive_mobile/features/shared/main_layout.dart';
+import 'package:cinehive_mobile/features/shared/detail_layout.dart';
 import 'package:cinehive_mobile/features/tv/presentation/tv_home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -30,7 +30,7 @@ class HomeCarousel extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder:
-                        (c) => MainLayout(
+                        (c) => DetailLayout(
                           body: MovieHomePage(id: item.id.toString()),
                         ),
                   ),
@@ -40,7 +40,7 @@ class HomeCarousel extends StatelessWidget {
                   context,
                   MaterialPageRoute(
                     builder:
-                        (c) => MainLayout(
+                        (c) => DetailLayout(
                           body: TvHomePage(id: item.id.toString()),
                         ),
                   ),
