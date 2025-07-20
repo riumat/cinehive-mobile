@@ -11,7 +11,9 @@ import 'package:cinehive_mobile/features/tv/data/tv_home_provider.dart';
 import 'package:cinehive_mobile/features/tv/models/tv.dart';
 import 'package:cinehive_mobile/features/tv/presentation/tv_cast_page.dart';
 import 'package:cinehive_mobile/features/tv/presentation/tv_crew_page.dart';
+import 'package:cinehive_mobile/features/tv/presentation/tv_seasons_page.dart';
 import 'package:cinehive_mobile/features/tv/widgets/featured_episode.dart';
+import 'package:cinehive_mobile/features/tv/widgets/seasons.dart';
 import 'package:cinehive_mobile/utils/formatters.dart';
 import 'package:cinehive_mobile/utils/media_urls.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +34,7 @@ class TvHomePage extends ConsumerWidget {
           final backdropUrl = MediaImageUrls.backdropMd(tv.backdropPath);
           final posterUrl = MediaImageUrls.posterSm(tv.posterPath);
 
-        /*   final directors = tv.credits.crew.where(
+          /*   final directors = tv.credits.crew.where(
             (c) => c.job
                 .split(',')
                 .map((job) => job.trim())
@@ -70,24 +72,22 @@ class TvHomePage extends ConsumerWidget {
                   rating: tv.voteAverage,
                   status: tv.status,
                   genres: tv.genres,
-                  dateLabel: "Release Date",
                 ),
 
                 const SizedBox(height: 40),
 
                 if (tv.nextEpisode != null)
                   FeaturedEpisodeBox(
-                    label:"Next Episode",
+                    label: "Next Episode",
                     title: tv.nextEpisode!.title,
                     airDate: Formatters.formatDate(tv.nextEpisode!.airDate),
+                  )
+                else if (tv.lastEpisode != null)
+                  FeaturedEpisodeBox(
+                    label: "Last Episode",
+                    title: tv.lastEpisode!.title,
+                    airDate: Formatters.formatDate(tv.lastEpisode!.airDate),
                   ),
-
-                if (tv.lastEpisode != null)
-                FeaturedEpisodeBox(
-                  label: "Last Episode",
-                  title: tv.lastEpisode!.title,
-                  airDate: Formatters.formatDate(tv.lastEpisode!.airDate),
-                ),
 
                 const SizedBox(height: 30),
 
@@ -105,7 +105,10 @@ class TvHomePage extends ConsumerWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (c) => DetailLayout(body: TvCastPage(cast: tv.credits.cast)),
+                          builder:
+                              (c) => DetailLayout(
+                                body: TvCastPage(cast: tv.credits.cast),
+                              ),
                         ),
                       );
                     },
@@ -122,11 +125,28 @@ class TvHomePage extends ConsumerWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (c) => DetailLayout(body: TvCrewPage(crew: tv.credits.crew)),
+                          builder:
+                              (c) => DetailLayout(
+                                body: TvCrewPage(crew: tv.credits.crew),
+                              ),
                         ),
                       );
                     },
                   ),
+
+                const SizedBox(height: 30),
+
+                SeasonsBox(seasons: tv.seasons, onSeeAllPressed:() {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (c) => DetailLayout(
+                        body: TvSeasonsPage(seasons: tv.seasons,), //todo
+                      ),
+                    ),
+                  );
+                }),
+
 
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16),

@@ -29,7 +29,6 @@ class TvCrewPage extends ConsumerWidget {
             ),
           ),
 
-          // Griglia senza Column wrapper
           SliverPadding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             sliver: SliverGrid(
@@ -56,7 +55,6 @@ class TvCrewPage extends ConsumerWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Foto del crew member
           Expanded(
             flex: 3,
             child: Container(

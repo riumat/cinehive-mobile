@@ -29,7 +29,6 @@ class MovieCastPage extends ConsumerWidget {
             ),
           ),
 
-          // Griglia senza Column wrapper
           SliverPadding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             sliver: SliverGrid(
@@ -91,7 +90,6 @@ class MovieCastPage extends ConsumerWidget {
             ),
           ),
 
-          // Info dell'attore
           Expanded(
             flex: 2,
             child: Padding(

@@ -21,7 +21,7 @@ class OverviewContent extends StatelessWidget {
             end: Alignment.topRight,
             stops: const [0.0, 0.9],
           ),
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(12),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -36,7 +36,7 @@ class OverviewContent extends StatelessWidget {
             Text(
               overview,
               textAlign: TextAlign.start,
-              style: const TextStyle(fontSize: 14, color: Colors.white70),
+              style: const TextStyle(fontSize: 14, color: Colors.white),
             ),
           ],
         ),

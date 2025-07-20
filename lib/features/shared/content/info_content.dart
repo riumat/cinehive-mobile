@@ -9,7 +9,6 @@ class InfoContent extends StatelessWidget {
   final double rating;
   final List<Genre> genres;
   final String? status;
-  final String dateLabel; // "Release Date" o "First Air Date"
 
   const InfoContent({
     super.key,
@@ -19,7 +18,6 @@ class InfoContent extends StatelessWidget {
     this.status,
     required this.rating,
     required this.genres,
-    this.dateLabel = "Release Date",
   });
 
   @override

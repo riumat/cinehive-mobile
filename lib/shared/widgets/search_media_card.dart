@@ -64,7 +64,6 @@ Widget searchMediaCard(MediaDiscover media, BuildContext context) {
                   ),
             ),
           ),
-          // Informazioni testuali
           Expanded(
             child: Padding(
               padding: const EdgeInsets.all(16),

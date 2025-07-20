@@ -41,7 +41,9 @@ class FeaturedEpisodeBox extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-              child: Text(airDate),
+              child: Text(airDate,style:Theme.of(
+                  context,
+                ).textTheme.titleMedium),
             ),
           ],
         ),

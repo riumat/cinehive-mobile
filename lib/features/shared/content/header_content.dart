@@ -21,7 +21,6 @@ class HeaderContent extends StatelessWidget {
     return Stack(
       clipBehavior: Clip.none,
       children: [
-        // Backdrop
         AspectRatio(
           aspectRatio: 16 / 9,
           child: ClipRRect(
@@ -38,7 +37,6 @@ class HeaderContent extends StatelessWidget {
             ),
           ),
         ),
-        // Poster sovrapposto
         Positioned(
           right: 16,
           bottom: posterBottomOffset,

@@ -69,7 +69,6 @@ class MovieHomePage extends ConsumerWidget {
                   rating: movie.voteAverage,
                   genres: movie.genres,
                   runtime: movie.runtime,
-                  dateLabel: "Release Date",
                 ),
 
                 const SizedBox(height: 40),

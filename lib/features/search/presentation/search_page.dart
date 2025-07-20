@@ -46,7 +46,6 @@ class _SearchPageState extends ConsumerState<SearchPage> {
                 },
               ),
             ),
-            // Results List
             Expanded(
               child: _searchQuery.isEmpty
                   ? const Center(

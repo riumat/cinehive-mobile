@@ -184,7 +184,7 @@ class TvHome {
       voteAverage: (json['vote_average'] ?? 0).toDouble(),
       voteCount: json['vote_count'] as int? ?? 0,
       nextEpisode:
-          json['next_episode_to_air'] != null
+          json['next_episode_to_air'] != null 
               ? FeaturedEpisode(
                 title: json['next_episode_to_air']['name'] ?? '',
                 airDate: json['next_episode_to_air']['air_date'] ?? '',

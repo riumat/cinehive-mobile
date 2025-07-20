@@ -2,13 +2,13 @@ import 'package:cinehive_mobile/utils/formatters.dart';
 import 'package:flutter/material.dart';
 
 final revenueGradient = LinearGradient(
-  colors: [Colors.transparent, Colors.green.shade500.withAlpha(50)],
+  colors: [Colors.transparent, Colors.green.shade500.withAlpha(70)],
   begin: Alignment.topLeft,
   end: Alignment.bottomRight,
 );
 
 final budgetGradient = LinearGradient(
-  colors: [Colors.transparent, Colors.red.shade500.withAlpha(50)],
+  colors: [Colors.transparent, Colors.red.shade500.withAlpha(70)],
   begin: Alignment.topLeft,
   end: Alignment.bottomRight,
 );

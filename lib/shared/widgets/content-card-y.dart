@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class ContentCardX extends StatelessWidget {
   final String title;
-  final String imagePath; // Percorso locale o URL
+  final String imagePath; 
   final double voteAverage;
   final String year;
 
@@ -37,7 +37,6 @@ class ContentCardX extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Immagine locale
           ClipRRect(
             borderRadius: const BorderRadius.vertical(top: Radius.circular(8)),
             child: Image.asset(
@@ -47,7 +46,6 @@ class ContentCardX extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          // Info
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: Column(
