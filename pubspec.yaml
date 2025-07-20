@@ -15,6 +15,7 @@ dependencies:
   flutter_dotenv: ^5.1.0
   intl: ^0.18.1
   icons_launcher: ^3.0.1
+  modal_bottom_sheet: ^3.0.0
 
 flutter_native_splash:
   image: assets/images/logo-no-bg.png
