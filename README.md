@@ -1,3 +1,3 @@
 # cinehive_mobile
 
-A new Flutter project.
+Cinehive.

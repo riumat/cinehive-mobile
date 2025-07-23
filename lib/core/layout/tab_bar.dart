@@ -1,7 +1,6 @@
 import 'package:cinehive_mobile/features/home/presentation/home_page.dart';
 import 'package:cinehive_mobile/features/profile/presentation/profile_page.dart';
-import 'package:cinehive_mobile/features/search/presentation/search_page.dart';
-import 'package:cinehive_mobile/features/shared/main_layout.dart';
+import 'package:cinehive_mobile/core/layout/main_layout.dart';
 import 'package:flutter/material.dart';
 
 class CustomTabBar extends StatelessWidget {
@@ -15,15 +14,15 @@ class CustomTabBar extends StatelessWidget {
           top: BorderSide(color: Colors.grey.shade900, width: 0.5),
         ),
       ),
-      height: 50,
+      height: 55,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           IconButton(
-            icon: Icon(Icons.home, size: 30, color: Colors.white),
+            icon: Icon(Icons.home_outlined, size: 30, color: Colors.white),
             onPressed:
                 () => {
-                  Navigator.push(
+                  Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
                       builder: (c) => MainLayout(body: HomePage()),
@@ -31,23 +30,12 @@ class CustomTabBar extends StatelessWidget {
                   ),
                 },
           ),
+         
           IconButton(
-            icon: Icon(Icons.search, size: 30, color: Colors.white),
+            icon: Icon(Icons.person_outline, size: 30, color: Colors.white),
             onPressed:
                 () => {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (c) => MainLayout(body: SearchPage(query: "")),
-                    ),
-                  ),
-                },
-          ),
-          IconButton(
-            icon: Icon(Icons.person, size: 30, color: Colors.white),
-            onPressed:
-                () => {
-                  Navigator.push(
+                  Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
                       builder: (c) => MainLayout(body: ProfilePage()),

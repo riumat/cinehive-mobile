@@ -1,5 +1,4 @@
-import 'package:cinehive_mobile/features/home/presentation/home_page.dart';
-import 'package:cinehive_mobile/features/shared/main_layout.dart';
+import 'package:cinehive_mobile/core/services/auth_guard.dart';
 import 'package:flutter/material.dart';
 
 class MainApp extends StatelessWidget {
@@ -19,7 +18,7 @@ class MainApp extends StatelessWidget {
        )
       ),
       debugShowCheckedModeBanner: false,
-      home: MainLayout(body: HomePage()),
+      home: AuthGuard(),
     );
   }
 }

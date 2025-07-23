@@ -16,6 +16,8 @@ dependencies:
   intl: ^0.18.1
   icons_launcher: ^3.0.1
   modal_bottom_sheet: ^3.0.0
+  flutter_secure_storage: ^9.2.4
+  fl_chart: ^1.0.0
 
 flutter_native_splash:
   image: assets/images/logo-no-bg.png

@@ -1,9 +1,9 @@
 import 'package:cinehive_mobile/features/home/data/home_content_provider.dart';
-import 'package:cinehive_mobile/features/home/widgets/carousel.dart';
-import 'package:cinehive_mobile/features/home/widgets/carousel_section.dart';
+import 'package:cinehive_mobile/features/shared/widgets/carousel.dart';
+import 'package:cinehive_mobile/features/shared/widgets/carousel_section.dart';
 import 'package:cinehive_mobile/features/search/presentation/search_page.dart';
-import 'package:cinehive_mobile/features/shared/detail_layout.dart';
-import 'package:cinehive_mobile/shared/widgets/searchbar.dart';
+import 'package:cinehive_mobile/core/layout/detail_layout.dart';
+import 'package:cinehive_mobile/features/shared/widgets/searchbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 

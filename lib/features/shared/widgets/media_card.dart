@@ -1,13 +1,16 @@
 import 'package:cinehive_mobile/features/movie/presentation/movie_home_page.dart';
 import 'package:cinehive_mobile/features/search/models/discover.dart';
-import 'package:cinehive_mobile/features/shared/detail_layout.dart';
+import 'package:cinehive_mobile/core/layout/detail_layout.dart';
 import 'package:cinehive_mobile/utils/formatters.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-Widget searchMediaCard(MediaDiscover media, BuildContext context) {
+final imageUrl= dotenv.env['IMAGES_URL'];
+
+Widget mediaCard(MediaDiscover media, BuildContext context) {
   final posterUrl =
       media.posterPath != null
-          ? 'https://image.tmdb.org/t/p/w154${media.posterPath}'
+          ? '$imageUrl/w154${media.posterPath}'
           : 'https://via.placeholder.com/150x225?text=No+Image';
 
   String subtitle = '';

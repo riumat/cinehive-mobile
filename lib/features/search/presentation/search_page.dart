@@ -1,6 +1,6 @@
 import 'package:cinehive_mobile/features/search/data/search_discover_provider.dart';
-import 'package:cinehive_mobile/shared/widgets/search_media_card.dart';
-import 'package:cinehive_mobile/shared/widgets/searchbar.dart';
+import 'package:cinehive_mobile/features/shared/widgets/media_card.dart';
+import 'package:cinehive_mobile/features/shared/widgets/searchbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -50,7 +50,7 @@ class _SearchPageState extends ConsumerState<SearchPage> {
               child: _searchQuery.isEmpty
                   ? const Center(
                       child: Text(
-                        'Inserisci un termine di ricerca',
+                        'Enter a search term',
                         style: TextStyle(color: Colors.grey),
                       ),
                     )
@@ -70,7 +70,7 @@ class _SearchPageState extends ConsumerState<SearchPage> {
         if (mediaList.isEmpty) {
           return const Center(
             child: Text(
-              'Nessun risultato trovato',
+              'Nothing found',
               style: TextStyle(color: Colors.grey),
             ),
           );
@@ -81,14 +81,14 @@ class _SearchPageState extends ConsumerState<SearchPage> {
           itemCount: mediaList.length,
           itemBuilder: (context, index) {
             final media = mediaList[index];
-            return searchMediaCard(media, context);
+            return mediaCard(media, context);
           },
         );
       },
       loading: () => const Center(child: CircularProgressIndicator()),
       error: (error, stack) => Center(
             child: Text(
-              'Errore: $error',
+              'Error: $error',
               style: const TextStyle(color: Colors.red),
             ),
           ),

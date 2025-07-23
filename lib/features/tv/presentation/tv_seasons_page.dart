@@ -136,7 +136,7 @@ class TvSeasonsPage extends ConsumerWidget {
     );
   }
 
-  void _showSeasonModal(BuildContext context, Season season) { //todo fetch episodes???
+  void _showSeasonModal(BuildContext context, Season season) { //todo fetch episodes
     showMaterialModalBottomSheet(
       context: context,
       backgroundColor: Colors.transparent,

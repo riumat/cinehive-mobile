@@ -1,4 +1,3 @@
-import 'package:cinehive_mobile/features/shared/side_bar.dart';
 import 'package:flutter/material.dart';
 
 class DetailLayout extends StatelessWidget {
@@ -10,7 +9,6 @@ class DetailLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        drawer: Sidebar(),
         body: Stack(
           children: [
             body,

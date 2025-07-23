@@ -45,7 +45,7 @@ class _SearchBarState extends State<CustomSearchbar> {
           borderSide: BorderSide.none,
         ),
         filled: true,
-        fillColor: Colors.grey[900],
+        fillColor: Colors.purple[200]?.withAlpha(50),
       ),
       style: const TextStyle(color: Colors.white, fontSize: 15),
       onSubmitted: (value) {

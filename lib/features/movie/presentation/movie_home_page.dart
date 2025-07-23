@@ -1,6 +1,7 @@
+import 'package:cinehive_mobile/features/auth/presentation/content_preferences.dart';
 import 'package:cinehive_mobile/features/home/models/content.dart';
-import 'package:cinehive_mobile/features/home/widgets/carousel.dart';
-import 'package:cinehive_mobile/features/home/widgets/carousel_section.dart';
+import 'package:cinehive_mobile/features/shared/widgets/carousel.dart';
+import 'package:cinehive_mobile/features/shared/widgets/carousel_section.dart';
 import 'package:cinehive_mobile/features/movie/data/movie_home_provider.dart';
 import 'package:cinehive_mobile/features/movie/models/movie.dart';
 import 'package:cinehive_mobile/features/movie/presentation/movie_cast_page.dart';
@@ -8,7 +9,7 @@ import 'package:cinehive_mobile/features/movie/presentation/movie_crew_page.dart
 import 'package:cinehive_mobile/features/movie/widgets/money_info.dart';
 import 'package:cinehive_mobile/features/shared/content/info_content.dart';
 import 'package:cinehive_mobile/features/shared/content/overview_content.dart';
-import 'package:cinehive_mobile/features/shared/detail_layout.dart';
+import 'package:cinehive_mobile/core/layout/detail_layout.dart';
 import 'package:cinehive_mobile/features/shared/content/header_content.dart';
 import 'package:cinehive_mobile/features/shared/content/top_list_content.dart';
 import 'package:cinehive_mobile/features/shared/models/content.dart';
@@ -31,7 +32,7 @@ class MovieHomePage extends ConsumerWidget {
           final backdropUrl = MediaImageUrls.backdropMd(movie.backdropPath);
           final posterUrl = MediaImageUrls.posterSm(movie.posterPath);
 
-         /*  final directors = movie.credits.crew.where(
+          /*  final directors = movie.credits.crew.where( //mostra solo i registi, da implementare in futuro
             (c) => c.job
                 .split(',')
                 .map((job) => job.trim())
@@ -69,6 +70,19 @@ class MovieHomePage extends ConsumerWidget {
                   rating: movie.voteAverage,
                   genres: movie.genres,
                   runtime: movie.runtime,
+                ),
+
+                const SizedBox(height: 40),
+
+                UserContentPreferences(
+                  contentId: movie.id,
+                  title:movie.title,
+                  backdropPath: movie.backdropPath,
+                  posterPath: movie.posterPath,
+                  releaseDate: movie.releaseDate,
+                  genres: movie.genres.map((genre)=>genre.id).toList(),
+                  duration: movie.runtime,
+                  mediaType: "movie",
                 ),
 
                 const SizedBox(height: 40),

@@ -1,4 +1,3 @@
-
 import 'package:cinehive_mobile/features/shared/models/content.dart';
 
 class MovieHome {
@@ -138,3 +137,6 @@ class MovieHome {
     );
   }
 }
+
+
+

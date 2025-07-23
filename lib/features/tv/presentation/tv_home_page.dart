@@ -1,9 +1,10 @@
+import 'package:cinehive_mobile/features/auth/presentation/content_preferences.dart';
 import 'package:cinehive_mobile/features/home/models/content.dart';
-import 'package:cinehive_mobile/features/home/widgets/carousel.dart';
-import 'package:cinehive_mobile/features/home/widgets/carousel_section.dart';
+import 'package:cinehive_mobile/features/shared/widgets/carousel.dart';
+import 'package:cinehive_mobile/features/shared/widgets/carousel_section.dart';
 import 'package:cinehive_mobile/features/shared/content/info_content.dart';
 import 'package:cinehive_mobile/features/shared/content/overview_content.dart';
-import 'package:cinehive_mobile/features/shared/detail_layout.dart';
+import 'package:cinehive_mobile/core/layout/detail_layout.dart';
 import 'package:cinehive_mobile/features/shared/content/header_content.dart';
 import 'package:cinehive_mobile/features/shared/content/top_list_content.dart';
 import 'package:cinehive_mobile/features/shared/models/content.dart';
@@ -75,6 +76,19 @@ class TvHomePage extends ConsumerWidget {
                 ),
 
                 const SizedBox(height: 40),
+
+               UserContentPreferences(
+                  contentId: tv.id,
+                  title:tv.title,
+                  backdropPath: tv.backdropPath,
+                  posterPath: tv.posterPath,
+                  releaseDate: tv.releaseDate,
+                  genres: tv.genres.map((genre)=>genre.id).toList(),
+                  mediaType: "tv",
+                ),
+
+                const SizedBox(height: 40),
+
 
                 if (tv.nextEpisode != null)
                   FeaturedEpisodeBox(

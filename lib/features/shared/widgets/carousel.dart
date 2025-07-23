@@ -1,6 +1,6 @@
 import 'package:cinehive_mobile/features/home/models/content.dart';
 import 'package:cinehive_mobile/features/movie/presentation/movie_home_page.dart';
-import 'package:cinehive_mobile/features/shared/detail_layout.dart';
+import 'package:cinehive_mobile/core/layout/detail_layout.dart';
 import 'package:cinehive_mobile/features/tv/presentation/tv_home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
